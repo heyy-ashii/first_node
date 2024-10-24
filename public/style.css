@@ -1,0 +1,99 @@
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+body{
+    height: 100vh;
+    background-color: rgb(12, 2, 48);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+h2{
+    margin-bottom: 30px;
+    text-align: center;
+}
+.form-list{
+    width: 340px;
+    margin-bottom: 12px;
+    padding: 12px;
+    border: 1px solid rgb(52, 43, 75) ;
+    color:#ffffff;
+    border-radius: 5px;
+    background-color: rgb(52, 43, 75);
+}
+
+a{
+    color: white;
+}
+ /* Email section */
+ .Email{
+    margin-bottom: 15px;
+
+ }
+
+.Email > label{
+   display: block;
+   font-weight: bold;
+   margin-bottom: 5px;
+}
+.Email > input{
+   width: 100%;
+   padding: 8px;
+   font-size: 10px;
+   border: 1px solid #fff6ff;
+   border-radius: 3px;
+}
+/* User name section */
+.username{
+    margin-bottom: 15px;
+
+ }
+
+.username > label{
+   display: block;
+   font-weight: bold;
+   margin-bottom: 5px;
+}
+.username > input{
+   width: 100%;
+   padding: 8px;
+   font-size: 18px;
+   border: 1px solid #fff6ff;
+   border-radius: 3px;
+}
+
+/* password section */
+
+.password{
+    margin-bottom: 15px;
+
+ }
+
+.password > label{
+   display: block;
+   font-weight: bold;
+   margin-bottom: 5px;
+}
+.password > input{
+   width: 100%;
+   padding: 8px;
+   font-size: 10px;
+   border: 1px solid #fff6ff;
+   border-radius: 3px;
+}
+
+.form > button{
+    width: 100%;
+    padding: 10px;
+    display: block;
+    background: rgb(12, 2, 48);
+    color: white;
+    border: 1px solid rgb(12, 2, 48);
+    border-radius: 6px;
+    cursor: pointer;
+}
+.form > p{
+    margin-bottom: 5px;
+}
