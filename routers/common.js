@@ -4,10 +4,16 @@ const commonRouter= express()
 const authController= require('../controllers/authController')
 
 
-
+// sign up
 commonRouter.get('/signup',authController.commonSignGet);
-// commonRouter.post('/',authController.commonSignPost);
 commonRouter.post('/signup',authController.commonSignPost);
+
+// login
+commonRouter.get('/login',authController.commonLoginGet);
+commonRouter.post('/login',authController.commonLoginPost);
+
+// home
+ commonRouter.get('/home',authController.commonHomeGet)
 
 
 module.exports=commonRouter

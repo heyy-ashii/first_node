@@ -1,7 +1,6 @@
 const express = require('express');
 require('dotenv').config();
 const dbConnect = require('./config/connection');
-const collection = require("./models/signUpModel")
 
 const app = express();
 
@@ -17,6 +16,7 @@ app.set('view engine','ejs');
 // for common route
 const common =require('./routers/common')
 app.use('/',common)
+
 
 dbConnect().then(()=>{
     app.listen(port,()=>{

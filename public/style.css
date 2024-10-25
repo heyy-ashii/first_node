@@ -41,7 +41,7 @@ a{
 .Email > input{
    width: 100%;
    padding: 8px;
-   font-size: 10px;
+   font-size: 12px;
    border: 1px solid #fff6ff;
    border-radius: 3px;
 }
@@ -59,7 +59,7 @@ a{
 .username > input{
    width: 100%;
    padding: 8px;
-   font-size: 18px;
+   font-size: 10px;
    border: 1px solid #fff6ff;
    border-radius: 3px;
 }
@@ -79,7 +79,7 @@ a{
 .password > input{
    width: 100%;
    padding: 8px;
-   font-size: 10px;
+   font-size: 12px;
    border: 1px solid #fff6ff;
    border-radius: 3px;
 }
