@@ -17,7 +17,7 @@ const signUpSchema = mongoose.Schema({
 // create Collection
 
 const collection = new mongoose.model('user',signUpSchema)
-console.log('hi');
+
 
 
 module.exports=collection
