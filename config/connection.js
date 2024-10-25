@@ -13,5 +13,6 @@ async function dbConnect(){
     })
 }
 
+console.log('hi');
 
 module.exports= dbConnect

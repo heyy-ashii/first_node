@@ -15,5 +15,6 @@ commonRouter.post('/login',authController.commonLoginPost);
 // home
  commonRouter.get('/home',authController.commonHomeGet)
 
+console.log('hi');
 
 module.exports=commonRouter

@@ -25,3 +25,5 @@ dbConnect().then(()=>{
 }).catch((err)=>{
     console.error('Database connection Failed:',err)
 });
+
+console.log('hi');

@@ -70,4 +70,5 @@ exports.commonLoginPost= async (req,res)=>{
 exports.commonHomeGet=function(req,res){
     res.render('home')
 }
+console.log('hi');
 
