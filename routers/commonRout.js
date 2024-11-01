@@ -13,8 +13,6 @@ commonRouter.get('/login',authController.commonLoginGet);
 commonRouter.post('/login',authController.commonLoginPost);
 
 // home
- commonRouter.get('/home',authController.commonHomeGet)
-
-
+commonRouter.get('/home',authController.commonHomeGet)
 
 module.exports=commonRouter

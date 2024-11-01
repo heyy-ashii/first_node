@@ -1,17 +1,21 @@
+const { required } = require('joi')
 const mongoose = require('mongoose')
 
 // loginSchema
 const signUpSchema = mongoose.Schema({
     name:{
-        type:'String',
+        type:String,
         required:true
     },
     password:{
-        type:'String',
+        type:String,
         required:true
+    } ,
+    role:{
+        type:String,
+        required:true,
+        default:'user'
     }
-
-    
 })
 
 // create Collection

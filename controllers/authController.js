@@ -1,13 +1,11 @@
 
 const signUpModel =require('../models/signUpModel')
-const collection= require('../models/signUpModel')
 const bcrypt= require('bcrypt')
-
 
 // SignUu section
 
 exports.commonSignGet=(req,res)=>{
-    res.render('signup')
+    res.render('common/signup')
 }
 
 exports.commonSignPost=  async (req, res) => {
@@ -29,8 +27,8 @@ exports.commonSignPost=  async (req, res) => {
             name:Username,
             password: hashedPassword
         });
-          
-    
+
+     
         await user.save();
         res.redirect('/login')
 
@@ -42,33 +40,49 @@ exports.commonSignPost=  async (req, res) => {
 }
 // login Selection
 exports.commonLoginGet=(req,res)=>{
-    res.render('login')
+    res.render('common/login')
 }
 
+// Login Section
+exports.commonLoginPost = async (req, res) => {
+    try {
+        const { Username, Password } = req.body;
 
-exports.commonLoginPost= async (req,res)=>{
-    try{
-        const loginData =req.body 
-        const {Username,Password}=loginData     
+        // First, check if the user exists
+        const usercheck = await signUpModel.findOne({ name: Username });
+        if (!usercheck) {
+            return res.json('Username not found👾');
+        }
 
-        const usercheck= await signUpModel.findOne({name: Username})
-        if(!usercheck){
-            res.json('Username not found👾')
+        // Check if user has admin role
+        const adminCheck = await signUpModel.findOne({ name: Username, role: 'admin' });
+        if (adminCheck) {
+            return res.redirect("/admin/admin");
         }
-        
-        const isPasswordMatch= await bcrypt.compare(Password,usercheck.password)
-        if(isPasswordMatch){
-           res.redirect("/home")
-           console.log('hello')
+
+        // Verify the password
+        const isPasswordMatch = await bcrypt.compare(Password, usercheck.password);
+        if (isPasswordMatch) {
+            res.redirect("/home");
+            console.log('hello');
+        } else {
+            res.json('Incorrect password');
         }
-    }catch(err){
+
+    } catch (err) {
         console.error(err.message);
-        res.status(500).json('Server👩🏻‍💻👩🏻‍💻👩🏻‍💻Error');
+        res.status(500).json('Server Error');
     }
+};
 
-}
+
+
 exports.commonHomeGet=function(req,res){
-    res.render('home')
+    res.render('user/home')
 }
+exports.adminHomeGet=(req,res)=>{
+    res.render('admin/admin')
+}
+
 
 

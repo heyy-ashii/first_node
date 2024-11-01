@@ -1,27 +1,27 @@
 const express = require('express');
 require('dotenv').config();
-const dbConnect = require('./config/connection');
 
 const app = express();
-
 const port = process.env.PORT
 
 app.use(express.json());
 app.use(express.urlencoded({extended:true}));
 app.use(express.static('./public'));
-
-// project started
 app.set('view engine','ejs');
 
+const dbConnect= require('./config/connection');
+dbConnect()
+
 // for common route
-const common =require('./routers/common')
+const common =require('./routers/commonRout')
 app.use('/',common)
 
+// for admin login
+const admin= require('./routers/adminRout')
+app.use('/admin',admin)
 
-dbConnect().then(()=>{
-    app.listen(port,()=>{
-        console.log(`server running on ${port}`);
-    })
-}).catch((err)=>{
-    console.error('Database connection Failed:',err)
-});
+
+
+app.listen(port,()=>{
+    console.log(`server started on ${port}`);
+})
