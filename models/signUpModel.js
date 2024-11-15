@@ -1,5 +1,5 @@
 const { required } = require('joi')
-const mongoose = require('mongoose')
+const mongoose = require(`mongoose`)
 
 // loginSchema
 const signUpSchema = mongoose.Schema({
@@ -10,18 +10,17 @@ const signUpSchema = mongoose.Schema({
     password:{
         type:String,
         required:true
-    } ,
+    },
     role:{
         type:String,
         required:true,
-        default:'user'
+        default:`user`
     }
 })
 
 // create Collection
 
 const collection = new mongoose.model('user',signUpSchema)
-
 
 
 module.exports=collection
